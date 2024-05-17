@@ -39,11 +39,12 @@ public class StudentDAOImpl implements StudentDAO{
 
 	@Override
 	@Transactional
-	public void saveAll(List<Student> list) {
+	public String saveAll(List<Student> list) {
 		for(Student std : list) {
 			entityManager.persist(std);
 		}
 		LOG.info("Saved All Students present in list");
+		return "Saved List in table";
 	}
 
 	@Override

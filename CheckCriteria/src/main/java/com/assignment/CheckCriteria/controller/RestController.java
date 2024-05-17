@@ -22,8 +22,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.assignment.CheckCriteria.CheckCriteriaApplication;
 import com.assignment.CheckCriteria.dao.StudentDAO;
 import com.assignment.CheckCriteria.entity.EligibilityConstants;
 import com.assignment.CheckCriteria.entity.Student;
