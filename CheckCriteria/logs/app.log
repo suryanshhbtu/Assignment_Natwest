@@ -1,0 +1,26 @@
+2024-05-17 10:04:57.675 [main] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:04:57.915 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:06:05.587 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:06:15.868 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:07:56.239 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:08:02.226 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:09:24.824 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:09:25.188 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 10:09:59.330 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:09:59.691 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 10:10:02.328 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:10:02.700 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 10:10:39.482 [http-nio-8080-exec-4] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Saved All Students present in list
+2024-05-17 10:11:20.384 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:11:20.777 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 10:11:57.829 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:11:58.198 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 10:17:29.432 [http-nio-8080-exec-1] INFO  com.assignment.CheckCriteria.controller.RestController - Updated Eligibility Criteria
+2024-05-17 10:20:01.559 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:20:01.967 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 10:20:03.383 [http-nio-8080-exec-1] INFO  com.assignment.CheckCriteria.controller.RestController - Updated Eligibility Criteria
+2024-05-17 10:20:17.935 [http-nio-8080-exec-3] INFO  com.assignment.CheckCriteria.controller.RestController - Updated Eligibility Criteria
+2024-05-17 10:24:15.478 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 10:24:15.825 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 10:24:21.817 [http-nio-8080-exec-2] INFO  com.assignment.CheckCriteria.controller.RestController - Updated Eligibility Criteria
+2024-05-17 10:24:40.121 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
