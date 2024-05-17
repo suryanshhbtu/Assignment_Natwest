@@ -7,9 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * 
- */
+
 @Entity
 @Table(name="student")
 public class Student {
@@ -37,13 +35,13 @@ public class Student {
     private int computer;
     
     @Column(name="eligible")
-    private int eligible;
+    private String eligible;
 
     public Student() {
     	
     }
 	public Student(int rollNo, String studentName, int science, int maths, int english, int computer,
-			int eligible) {
+			String eligible) {
 		super();
 		this.rollNo = rollNo;
 		this.studentName = studentName;
@@ -95,10 +93,10 @@ public class Student {
 	public void setComputer(int computer) {
 		this.computer = computer;
 	}
-	public int getEligible() {
+	public String getEligible() {
 		return eligible;
 	}
-	public void setEligible(int eligible) {
+	public void setEligible(String eligible) {
 		this.eligible = eligible;
 	}
 	@Override
