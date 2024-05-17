@@ -52,7 +52,7 @@ public class RestControllerTest {
         when(studentDAO.saveAll(Mockito.anyList())).thenReturn(getMockStudentList());
 
         // Call the method under test
-        List<Student> result = restController.parseCSV(files);
+        List<Student> result = (List<Student>) restController.parseCSV(files);
         // Verify the result
         assertEquals(2, result.size());
         // Add more assertions as needed

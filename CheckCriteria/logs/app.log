@@ -36,3 +36,11 @@
 2024-05-17 11:09:27.201 [http-nio-8080-exec-2] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Generated Table As List
 2024-05-17 11:09:46.131 [http-nio-8080-exec-4] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Finding Student By RollNo. 
 2024-05-17 11:09:54.098 [http-nio-8080-exec-3] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Finding Student By RollNo. 
+2024-05-17 11:11:29.954 [http-nio-8080-exec-7] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Saved All Students present in list
+2024-05-17 11:28:15.478 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 11:28:23.539 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 11:28:24.019 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 11:28:52.124 [main] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 11:28:52.295 [restartedMain] INFO  com.assignment.CheckCriteria.CheckCriteriaApplication - info Message
+2024-05-17 11:28:55.861 [restartedMain] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Entity Manager Injected
+2024-05-17 11:29:33.731 [http-nio-8080-exec-5] INFO  com.assignment.CheckCriteria.dao.StudentDAOImpl - Saved All Students present in list

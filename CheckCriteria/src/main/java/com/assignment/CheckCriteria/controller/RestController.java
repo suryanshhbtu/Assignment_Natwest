@@ -7,10 +7,12 @@ import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -44,16 +46,44 @@ public class RestController {
 	@Autowired
 	StudentDAO studentDAO;
 
+	 @Autowired
+	    private TaskExecutor taskExecutor;
+	
 	@Operation(
 			summary = "POST Mapping For CSV File",
 			description = "Upload multiple CSV Files Over it"
 			)
-    @PostMapping(value = "/csv", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public List<Student> parseCSV(@RequestPart("files") List<MultipartFile> files) throws IOException, CsvException {
-        List<Student> studentList = new ArrayList<>();
+	    @PostMapping(value = "/csv", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	    public ResponseEntity<List<Student>> parseCSV(@RequestPart("files") List<MultipartFile> files) throws IOException, CsvException {
+	        List<Student> studentList = new ArrayList<>();
+	        CountDownLatch latch = new CountDownLatch(files.size());
 
-        for (MultipartFile file : files) {
-            Reader reader = new InputStreamReader(file.getInputStream());
+	        for (MultipartFile file : files) {
+	            taskExecutor.execute(() -> {
+	                try {
+	                    parseCSVFile(file, studentList);
+	                } finally {
+	                    latch.countDown();
+	                }
+	            });
+	        }
+
+	        try {
+	            latch.await();
+	        } catch (InterruptedException e) {
+	            Thread.currentThread().interrupt();
+	            e.printStackTrace(); // Handle exception appropriately
+	        }
+
+	        // Save to database
+	        studentDAO.saveAll(studentList);
+
+	        return ResponseEntity.ok(studentList);
+	}
+	
+
+    private void parseCSVFile(MultipartFile file, List<Student> studentList) {
+        try (Reader reader = new InputStreamReader(file.getInputStream())) {
             // Parse CSV data
             CSVReader csvReader = new CSVReaderBuilder(reader).build();
             List<String[]> rows = csvReader.readAll();
@@ -76,16 +106,14 @@ public class RestController {
                     eligible = "YES";
 
                 Student student = new Student(rollNo, name, science, maths, english, computer, eligible);
-                studentList.add(student);
+                synchronized(studentList) {
+                    studentList.add(student);
+                }
             }
+        } catch (IOException | CsvException e) {
+            e.printStackTrace(); // Handle exception appropriately
         }
-
-        // Save to database
-        studentDAO.saveAll(studentList);
-
-        return studentList;
     }
-
 
 	@Operation(
 			summary = "GET Mapping For CSV File",
